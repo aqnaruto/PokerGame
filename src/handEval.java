@@ -25,11 +25,10 @@ public class handEval {
 	    	}
 	    	oPhands.get(0).sortHand(mC.userHand,mC.mypile);
 	    	System.out.println(mC.mypile.drawPile.size());
-	    	System.out.println("The use's hand is determined at this point");
-	  	    System.out.println("This is the user Hand");
+	    	System.out.println("The user's hand is determined at this point");
+	  	    System.out.println("This is the user Hand ");
 	  	    mC.printHand(mC.userHand);
 	  	    for(int i=0;i<numPlayers;i++){
-	  	    	System.out.println("Hello this is the computer's hand");
 	  	    	mC.printHand(oPhands.get(i).opponentHand);
 	  	    }
 	  	    Evaluation(oPhands,mC);
@@ -37,16 +36,16 @@ public class handEval {
 	    
 	    
 	    public void Evaluation(ArrayList<opponentPlayer>oPhands,userPlayer mC){
-	    	System.out.println("Hello I am inside of evaluation");
 	    	ArrayList<ArrayList<card>>evalHands= new ArrayList<ArrayList<card>>();
 	    	for(int j=0;j<oPhands.size();j++){
 	    	    evalHands.add(oPhands.get(j).opponentHand);
 	    	}
 	    	evalHands.add(mC.userHand);
 	    	// Printing all the hands to evaluate
-	    	for(int k=0;k<evalHands.size();k++){
+	    	/*for(int k=0;k<evalHands.size();k++){
 	    		System.out.println(evalHands.get(k));
 	    	}
+	    	*/
 	    	///////////////////////////////////////////////
 	    	//Straight flush
 	    	for(int i=0;i<evalHands.size();i++){
@@ -56,7 +55,7 @@ public class handEval {
 	    	}
 	            if(pWinners.size()==1){
 	            	winner=pWinners.get(0)+1;
-	            	System.out.println("Player "+ winner+ "Won the game.Thank you for playing");
+	            	System.out.println("Player "+ winner + " Won the game.Thank you for playing");
 	            }
 	            else if(pWinners.size()>1)
 	                   tieBreaker(pWinners,evalHands);

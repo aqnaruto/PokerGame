@@ -1,3 +1,4 @@
+// Card class that includes the cardRank and cardSuit.
 
 public class card{
 	char cardRank;

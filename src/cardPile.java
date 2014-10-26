@@ -3,12 +3,12 @@ import java.util.List;
 import java.util.Random;
 
 public class cardPile{
-	char [] Rank={'2','3','4','5','6','7','8','9','T','J','Q','K','A'};
+	char [] Rank={'2','3','4','5','6','7','8','9','T','J','Q','K','A'}; // Initiallizing the ranks and the suits. 
 	char [] Suit= {'C','D','H','S'};
 	ArrayList<card>myPile=new ArrayList<card>();
 	ArrayList<card>drawPile=new ArrayList<card>();
 	ArrayList<card>discardPile= new ArrayList<card>();
-	public cardPile(){
+	public cardPile(){  // creating a card pile of size 52.
 		for(int i=0;i<Rank.length;i++){
 			for(int j=0;j<Suit.length;j++){
 				myPile.add(new card(Rank[i],Suit[j]));
@@ -20,7 +20,7 @@ public class cardPile{
 		System.out.println(myCard.cardRank +" "+myCard.cardSuit);
 	   }
 	}
-	public void shuffle(cardPile mypile){
+	public void shuffle(cardPile mypile){   // a function that will randomly shuffle the pile
 		for(int i=0;i<13;i++){
 			for(int j=0;j<4;j++){
 				Random rand = new Random();
